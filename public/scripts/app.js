@@ -19,9 +19,7 @@ var onFormSubmit = function onFormSubmit(e) {
     }
 };
 
-// create 'Remove All' button above list
-// on click - wipe the array -> rerender
-var removeAllOptions = function removeAllOptions() {
+var onRemoveAll = function onRemoveAll() {
     app.options = [];
     render();
 };
@@ -54,22 +52,21 @@ var render = function render() {
         ),
         React.createElement(
             'button',
-            { onClick: removeAllOptions },
+            { onClick: onRemoveAll },
             'Remove All'
         ),
         React.createElement(
             'ol',
             null,
-            React.createElement(
-                'li',
-                null,
-                'Item 1'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Item 2'
-            )
+
+            /* map goes through each item in te array, creating a new array of values */
+            app.options.map(function (option) {
+                return React.createElement(
+                    'li',
+                    { key: option },
+                    option
+                );
+            })
         ),
         React.createElement(
             'form',

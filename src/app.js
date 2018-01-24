@@ -17,9 +17,7 @@ const onFormSubmit = (e) => {
     }
 };
 
-// create 'Remove All' button above list
-// on click - wipe the array -> rerender
-const removeAllOptions = () => {
+const onRemoveAll = () => {
     app.options=[];
     render();
 }
@@ -34,12 +32,13 @@ const render = () => {
             {app.title && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
             <p>{app.options.length}</p>
-            <button onClick={removeAllOptions}>Remove All</button>
+            <button onClick={onRemoveAll}>Remove All</button>
             <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
+            {
+                /* map goes through each item in te array, creating a new array of values */
+                app.options.map((option) => <li key={option}>{option}</li>
+            )}
             </ol>
-    
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
                 <button>Add Option</button>
