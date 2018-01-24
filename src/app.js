@@ -22,6 +22,12 @@ const onRemoveAll = () => {
     render();
 }
 
+const onMakeDecision = () => {
+    // generate a random number to use it to pull it from the array (0 to number of items in the array)
+    const randomNumber = Math.floor(Math.random()*app.options.length);
+    const option = app.options[randomNumber];
+    alert(option);
+}
 
 const appRoot = document.getElementById('app');
 
@@ -31,13 +37,13 @@ const render = () => {
             <h1>{app.title}</h1>
             {app.title && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-            <p>{app.options.length}</p>
+            <button onClick={onMakeDecision} disabled={app.options.length == 0}>What should I do?</button>
             <button onClick={onRemoveAll}>Remove All</button>
             <ol>
             {
                 /* map goes through each item in te array, creating a new array of values */
-                app.options.map((option) => <li key={option}>{option}</li>
-            )}
+                app.options.map((option) => <li key={option}>{option}</li>)
+            }
             </ol>
             <form onSubmit={onFormSubmit}>
                 <input type='text' name='option' />
