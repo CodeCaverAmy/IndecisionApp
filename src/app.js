@@ -42,8 +42,13 @@ class Action extends React.Component {
 }
 
 class Options extends React.Component {
+    constructor(props) {
+        // override and bind this.props to the handleRemoveAll method
+        super(props);
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
     handleRemoveAll() {
-        alert('remove all');
+        console.log(this.props.options);
     }
     render() {
         return (
