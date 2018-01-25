@@ -24,14 +24,14 @@ var Person = function () {
     }, {
         key: 'getDescription',
         value: function getDescription() {
-            return this.name + ' is ' + this.age + ' years old.';
+            return '$(this.name) is $(name.age) years old.';
         }
     }]);
 
     return Person;
 }();
 
-var me = new Person('Amy Plant', 50);
+var me = new Person('Amy Plant');
 console.log(me.getGreeting());
 console.log(me.getDescription());
 
