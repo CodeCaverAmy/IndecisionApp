@@ -1,3 +1,5 @@
+// stateless functional component - does not allow for state
+
 
 class IndecisionApp extends React.Component {
     // constructor
@@ -7,6 +9,8 @@ class IndecisionApp extends React.Component {
         this.handlePick = this.handlePick.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
+            title: 'Indecision App',
+            subtitle: 'Let the computer decide your destiny',
             options: []
         };
     }
@@ -54,7 +58,10 @@ class IndecisionApp extends React.Component {
     render() {
         return (
             <div>
-                <Header title={this.state.title} subtitle={this.state.subtitle}/>
+                <Header 
+                    title={this.state.title} 
+                    subtitle={this.state.subtitle}
+                />
                 <Action 
                     hasOptions = {this.state.options.length > 0}
                     handlePick = {this.handlePick}
@@ -70,61 +77,54 @@ class IndecisionApp extends React.Component {
         );
     }
 }
+            
+// Header can be a stateless functional component, it only presents info, and doesn't manage state
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
+        </div>
+    )
+};
 
-// create the Header Component as a class extended from React
-class Header extends React.Component {
-    // requires the render function
-    render() {
-        const title = 'Indecision App';
-        const subtitle = 'Put your life in the hands of a computer';
-        return (
-            <div>
-                <h1>{this.title}</h1>
-                <h2>{this.subtitle}</h2>
-            </div>
-        );
-    }
+// stateless functional component, because while it uses state .. it doesn't need to change the state
+const Action = (props) => {
+    return (
+        <div>
+            <button 
+                onClick={props.handlePick}
+                disabled={!props.hasOptions}
+            >
+                What should I do?
+            </button>
+        </div>
+    );
+};
+
+// stateless functional component, uses state .. but doesn't manage it .. althoug it does use a function to change state
+const Options = (props) => {
+    return (
+        <div>
+            <button onClick={props.handleDeleteOptions}>Remove All</button>
+            <p>{props.options.length > 0 ? `Here are your ${props.options.length} options` : 'No options'}</p>
+            {
+                props.options.map((option) => <Option key= {option} optionText={option}/>)
+            }            
+        </div>
+    );
+};
+
+// stateless functional component, uses state .. but doesn't manage it
+const Option = (props) => {
+    return (
+        <div>
+            {props.optionText}
+        </div>
+    );
 }
 
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button 
-                    onClick={this.props.handlePick}
-                    disabled={!this.props.hasOptions}
-                >
-                    What should I do?
-                </button>
-            </div>
-        );
-    }
-}
-
-class Options extends React.Component {
-    render() {
-        return (
-            <div>
-                <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-                <p>{this.props.options.length > 0 ? `Here are your ${this.props.options.length} options` : 'No options'}</p>
-                {
-                    this.props.options.map((option) => <Option key= {option} optionText={option}/>)
-                }            
-            </div>
-        );
-    }
-}
-
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.optionText}
-            </div>
-        );
-    }
-}
-
+// class based component, it does need to manage state (error)
 class AddOption extends React.Component {
     constructor(props) {
         super(props);
@@ -162,5 +162,5 @@ class AddOption extends React.Component {
 }
 
 
-// redner the jsx into the div with id = app
+// redner the IndecisionApp into the div with id = app
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
