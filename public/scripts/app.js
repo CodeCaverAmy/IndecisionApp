@@ -29,10 +29,29 @@ var IndecisionApp = function (_React$Component) {
         };
         return _this;
     }
-    // methods (may need to be passed on to other components if they don't live in this render method)
+
+    // Lifecycles: these are only available in a class based componet
 
 
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('fetching data');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('saving data');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('component will unmount');
+        }
+
+        // methods (may need to be passed on to other components if they don't live in this render method)
+
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             // this.setState(() => {

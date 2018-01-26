@@ -13,6 +13,20 @@ class IndecisionApp extends React.Component {
             options: props.options
         };
     }
+
+    // Lifecycles: these are only available in a class based componet
+    componentDidMount() {
+        console.log('fetching data');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('saving data');
+    }
+
+    componentWillUnmount() {
+        console.log('component will unmount');
+    }
+
     // methods (may need to be passed on to other components if they don't live in this render method)
     handleDeleteOptions() {
         // this.setState(() => {
