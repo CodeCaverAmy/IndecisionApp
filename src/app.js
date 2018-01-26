@@ -9,9 +9,8 @@ class IndecisionApp extends React.Component {
         this.handlePick = this.handlePick.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
-            title: 'Indecision App',
-            subtitle: 'Let the computer decide your destiny',
-            options: []
+            // if users provide options when IndecisionApp component is called
+            options: props.options
         };
     }
     // methods (may need to be passed on to other components if they don't live in this render method)
@@ -56,11 +55,12 @@ class IndecisionApp extends React.Component {
 
     //render
     render() {
+        const subtitle = 'Let the computer decide your destiny';
         return (
+
             <div>
                 <Header 
-                    title={this.state.title} 
-                    subtitle={this.state.subtitle}
+                    subtitle={subtitle}
                 />
                 <Action 
                     hasOptions = {this.state.options.length > 0}
@@ -77,15 +77,24 @@ class IndecisionApp extends React.Component {
         );
     }
 }
+
+// default props to use if the user has not passed any in when calling IndecisionApp
+IndecisionApp.defaultProps = {
+    options: []
+};
             
 // Header can be a stateless functional component, it only presents info, and doesn't manage state
 const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     )
+};
+
+Header.defaultProps = {
+    title: 'Indecision'
 };
 
 // stateless functional component, because while it uses state .. it doesn't need to change the state
@@ -163,4 +172,4 @@ class AddOption extends React.Component {
 
 
 // redner the IndecisionApp into the div with id = app
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp options={['Spanish', 'English']}/>, document.getElementById('app'));
