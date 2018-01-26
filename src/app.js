@@ -10,7 +10,7 @@ class IndecisionApp extends React.Component {
         this.handleDeleteOption = this.handleDeleteOption.bind(this);
         this.state = {
             // if users provide options when IndecisionApp component is called
-            options: props.options
+            options: []
         };
     }
 
@@ -116,11 +116,6 @@ class IndecisionApp extends React.Component {
         );
     }
 }
-
-// default props to use if the user has not passed any in when calling IndecisionApp
-IndecisionApp.defaultProps = {
-    options: []
-};
             
 // Header can be a stateless functional component, it only presents info, and doesn't manage state
 const Header = (props) => {
@@ -222,4 +217,4 @@ class AddOption extends React.Component {
 
 
 // redner the IndecisionApp into the div with id = app
-ReactDOM.render(<IndecisionApp options={['Spanish', 'English']}/>, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
