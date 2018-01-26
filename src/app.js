@@ -1,6 +1,5 @@
 // stateless functional component - does not allow for state
 
-
 class IndecisionApp extends React.Component {
     // constructor
     constructor(props) {
@@ -15,11 +14,14 @@ class IndecisionApp extends React.Component {
     }
     // methods (may need to be passed on to other components if they don't live in this render method)
     handleDeleteOptions() {
-        this.setState(() => {
-            return {
-                options: []
-            };
-        });
+        // this.setState(() => {
+        //     return {
+        //         options: []
+        //     };
+        // });
+
+        // can be simplified to ...
+        this.setState(() => ({ options: [] }));
     }
 
     handlePick() {
@@ -43,14 +45,7 @@ class IndecisionApp extends React.Component {
         }
         
         // this will only be called if the first two if / else if didn't return anything
-        this.setState((prevState) => {
-            return {
-                // we don't want to change the actual options array
-                // concat will create a new array with the added object
-                options: prevState.options.concat(option)
-            };
-        });
-        
+        this.setState((prevState) => ({options: prevState.options.concat(option)}));        
     }
 
     //render
@@ -149,13 +144,7 @@ class AddOption extends React.Component {
         // if something is returned from handleAddOptions, then it must have been an error
         const error = this.props.handleAddOption(option); 
 
-        this.setState(() => {
-            return {
-                // error: error
-                // in ES6 ... this is exactly the same since both are the same name
-                error
-            }
-        });
+        this.setState(() => ({error}));
     }
     render() {
         return (
