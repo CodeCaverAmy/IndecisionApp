@@ -19,8 +19,9 @@ var IndecisionApp = function (_React$Component) {
 
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePick = _this.handlePick.bind(_this);
+        _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.state = {
-            options: ['Thing One', 'Thing Two', 'Thing Three']
+            options: []
         };
         return _this;
     }
@@ -44,6 +45,30 @@ var IndecisionApp = function (_React$Component) {
             var option = this.state.options[randomNumber];
             alert(option);
         }
+    }, {
+        key: 'handleAddOption',
+        value: function handleAddOption(option) {
+            // data needs to be passed up from the AddOption Form
+
+            // validate option
+            // if option is empty
+            if (!option) {
+                return 'Enter valid value to add item';
+            }
+            // else if the option already exits: indexOf(item) ~> index of item OR -1 if it does not exist at all
+            else if (this.state.options.indexOf(option) > -1) {
+                    return 'This option already exits';
+                }
+
+            // this will only be called if the first two if / else if didn't return anything
+            this.setState(function (prevState) {
+                return {
+                    // we don't want to change the actual options array
+                    // concat will create a new array with the added object
+                    options: prevState.options.concat(option)
+                };
+            });
+        }
 
         //render
 
@@ -63,7 +88,7 @@ var IndecisionApp = function (_React$Component) {
                     handleDeleteOptions: this.handleDeleteOptions
                 }),
                 React.createElement(AddOption, {
-                    options: this.state.options
+                    handleAddOption: this.handleAddOption
                 })
             );
         }
@@ -202,10 +227,17 @@ var Option = function (_React$Component5) {
 var AddOption = function (_React$Component6) {
     _inherits(AddOption, _React$Component6);
 
-    function AddOption() {
+    function AddOption(props) {
         _classCallCheck(this, AddOption);
 
-        return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+        var _this6 = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+
+        _this6.handleAddOption = _this6.handleAddOption.bind(_this6);
+        // track the state of the error message (which really only resides in this component)
+        _this6.state = {
+            error: undefined
+        };
+        return _this6;
     }
 
     _createClass(AddOption, [{
@@ -213,9 +245,16 @@ var AddOption = function (_React$Component6) {
         value: function handleAddOption(e) {
             e.preventDefault(); // stop full page refresh
             var option = e.target.elements.option.value.trim(); // get the value the user typed
-            if (option) {
-                alert('Adding ' + option);
-            }
+            // if something is returned from handleAddOptions, then it must have been an error
+            var error = this.props.handleAddOption(option);
+
+            this.setState(function () {
+                return {
+                    // error: error
+                    // in ES6 ... this is exactly the same since both are the same name
+                    error: error
+                };
+            });
         }
     }, {
         key: 'render',
@@ -223,6 +262,11 @@ var AddOption = function (_React$Component6) {
             return React.createElement(
                 'div',
                 null,
+                this.state.error && React.createElement(
+                    'p',
+                    null,
+                    this.state.error
+                ),
                 React.createElement(
                     'form',
                     { onSubmit: this.handleAddOption },
