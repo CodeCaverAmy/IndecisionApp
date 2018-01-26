@@ -22,6 +22,7 @@ var IndecisionApp = function (_React$Component) {
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePick = _this.handlePick.bind(_this);
         _this.handleAddOption = _this.handleAddOption.bind(_this);
+        _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
         _this.state = {
             // if users provide options when IndecisionApp component is called
             options: props.options
@@ -43,6 +44,17 @@ var IndecisionApp = function (_React$Component) {
             // can be simplified to ...
             this.setState(function () {
                 return { options: [] };
+            });
+        }
+    }, {
+        key: 'handleDeleteOption',
+        value: function handleDeleteOption(optionToRemove) {
+            this.setState(function (prevState) {
+                return {
+                    options: prevState.options.filter(function (option) {
+                        return optionToRemove !== option;
+                    })
+                };
             });
         }
     }, {
@@ -70,7 +82,9 @@ var IndecisionApp = function (_React$Component) {
 
             // this will only be called if the first two if / else if didn't return anything
             this.setState(function (prevState) {
-                return { options: prevState.options.concat(option) };
+                return {
+                    options: prevState.options.concat(option)
+                };
             });
         }
 
@@ -92,7 +106,8 @@ var IndecisionApp = function (_React$Component) {
                 }),
                 React.createElement(Options, {
                     options: this.state.options,
-                    handleDeleteOptions: this.handleDeleteOptions
+                    handleDeleteOptions: this.handleDeleteOptions,
+                    handleDeleteOption: this.handleDeleteOption
                 }),
                 React.createElement(AddOption, {
                     handleAddOption: this.handleAddOption
@@ -165,7 +180,11 @@ var Options = function Options(props) {
             props.options.length > 0 ? 'Here are your ' + props.options.length + ' options' : 'No options'
         ),
         props.options.map(function (option) {
-            return React.createElement(Option, { key: option, optionText: option });
+            return React.createElement(Option, {
+                key: option,
+                optionText: option,
+                handleDeleteOption: props.handleDeleteOption
+            });
         })
     );
 };
@@ -175,7 +194,16 @@ var Option = function Option(props) {
     return React.createElement(
         'div',
         null,
-        props.optionText
+        props.optionText,
+        React.createElement(
+            'button',
+            {
+                onClick: function onClick(e) {
+                    props.handleDeleteOption(props.optionText);
+                }
+            },
+            'remove'
+        )
     );
 };
 
