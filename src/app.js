@@ -16,11 +16,31 @@ class IndecisionApp extends React.Component {
 
     // Lifecycles: these are only available in a class based componet
     componentDidMount() {
-        console.log('fetching data');
+        try {
+            // read data from local storage
+            const json = localStorage.getItem('options');
+            // since localStorag only stores string
+            // we need to conver the string value back to its JSON object
+            const options = JSON.parse(json);
+    
+            if(options) {
+                //this.setState(() => ({ options: options })) .. 
+                // is identical to the next line since both the state and the value passing in are named the same
+                this.setState(() => ({ options }))
+            }
+        } catch (e) {
+            // Do nothing at all
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log('saving data');
+        // save data
+        if (prevState.options.length !== this.state.options.length) {
+            // localStorage will only allow for strings to be saved, 
+            // so use JSON.stringify to convert our object into a string value
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+        }
     }
 
     componentWillUnmount() {
@@ -135,7 +155,7 @@ const Options = (props) => {
     return (
         <div>
             <button onClick={props.handleDeleteOptions}>Remove All</button>
-            <p>{props.options.length > 0 ? `Here are your ${props.options.length} options` : 'No options'}</p>
+            {props.options.length > 0 ? <p>Here are your {props.options.length} options</p> : <p>Add an option to get started.</p>}
             {
                 props.options.map((option) => (
                     <Option 
@@ -181,7 +201,11 @@ class AddOption extends React.Component {
         // if something is returned from handleAddOptions, then it must have been an error
         const error = this.props.handleAddOption(option); 
 
-        this.setState(() => ({error}));
+        this.setState(() => ({ error }));
+
+        if (!error) {
+            e.target.elements.option.value = '';
+        }
     }
     render() {
         return (
