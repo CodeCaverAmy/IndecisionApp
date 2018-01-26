@@ -36,7 +36,7 @@ var Counter = function (_React$Component) {
             this.setState(function (prevState) {
                 // define the updates we want to make .. just return an object
                 // specify the various state values we want to change, and the new value we want to assign
-                // prevState 
+                // prevState (could be named anything) is the state prior to updateing it.
                 return {
                     count: prevState.count + 1
                 };
@@ -54,7 +54,7 @@ var Counter = function (_React$Component) {
     }, {
         key: 'handleReset',
         value: function handleReset() {
-            this.setState(function (prevState) {
+            this.setState(function () {
                 return {
                     count: 0
                 };
@@ -94,41 +94,4 @@ var Counter = function (_React$Component) {
     return Counter;
 }(React.Component);
 
-// set up 3 methods, onClick Handlers
-
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
-
-// let count = 0;
-
-// const addOne = () => {
-//     count ++;
-//     renderCounterApp();
-// };
-
-// const minusOne = () => {
-//     count --;
-//     renderCounterApp();
-// };
-
-// const reset = () => {
-//     count = 0;
-//     renderCounterApp();
-// };
-
-
-// const appRoot = document.getElementById('app');
-
-// const renderCounterApp = () => {
-//     const template = (
-//         <div>
-//         <h1>Count: {count}</h1>
-//         <button onClick={addOne}>+1</button>
-//         <button onClick={minusOne}>-1</button>
-//         <button onClick={reset}>reset</button>
-//         </div>
-//     );
-
-//     ReactDOM.render(template, appRoot);
-// }
-
-// renderCounterApp();
