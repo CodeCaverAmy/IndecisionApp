@@ -65,9 +65,49 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+// import './utils.js'; -— import entire utils.js
 
 console.log('app.js is running!!');
+
+console.log(Object(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */])(4));
+console.log(Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */])(5, -3));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+console.log('utils.js is running');
+
+// const square = (x) => x * x;
+// const add = (a, b) => a + b;
+
+// default exports and named exports
+
+//  named exports
+const square = (x) => x * x;
+/* harmony export (immutable) */ __webpack_exports__["b"] = square;
+
+const add = (a, b) => a + b;
+/* harmony export (immutable) */ __webpack_exports__["a"] = add;
+
+
+// default export
+// const subtract = (a,b) => a - b;
+// export default subtract;
+/* unused harmony default export */ var _unused_webpack_default_export = ((a,b) => a - b);
+
+// references to things that we want to export
+// export {
+//     square,
+//     add,
+//     subtract as default
+// };
 
 /***/ })
 /******/ ]);
