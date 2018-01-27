@@ -1,6 +1,7 @@
-// import './utils.js'; -— import entire utils.js
-import { square, add } from './utils';
-console.log('app.js is running!!');
+// 1. install validator - yarn add validator
+// 2. import validator - import validator from 'validator'; (from www.npmjs.com/validator)
+// 3. use validator for 'isEmail' - validator.isEmail(name@email.com)
 
-console.log(square(4));
-console.log(add(5, -3));
+import validator from 'validator';
+
+console.log(validator.isEmail('amyplant@me.com'));
