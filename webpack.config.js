@@ -21,6 +21,8 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/
         }]
-    }
+    },
+    // source map for WebPack to help with debugging
+    devtool: 'cheap-module-eval-source-map'
 };
 
