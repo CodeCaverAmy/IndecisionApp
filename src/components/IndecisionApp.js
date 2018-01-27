@@ -4,12 +4,14 @@ import Header from './Header';
 import AddOption from './AddOption';
 import Options from './Options';
 import Action from './Action';
+import OptionModal from './OptionModal';
 
 export default class IndecisionApp extends React.Component {
     // constructor
     state = {
         // if users provide options when IndecisionApp component is called
-        options: []
+        options: [],
+        selectedOption: undefined
     };
 
     // Lifecycles: these are only available in a class based componet
@@ -46,8 +48,16 @@ export default class IndecisionApp extends React.Component {
         // randomly pick an option
         const randomNumber = Math.floor(Math.random()*this.state.options.length);
         const option = this.state.options[randomNumber];
-        alert(option);
+        this.setState(() => ({
+            selectedOption: option
+        }));
     };
+
+    handleClearSelectedOption = (selectedOption) => {
+        this.setState(() => ({
+            selectedOption: undefined
+        }));
+    }
 
     handleAddOption = (option) => {
         // data needs to be passed up from the AddOption Form
@@ -103,6 +113,10 @@ export default class IndecisionApp extends React.Component {
                 />
                 <AddOption 
                     handleAddOption = {this.handleAddOption}
+                />
+                <OptionModal 
+                    selectedOption = {this.state.selectedOption}
+                    handleClearSelectedOption = {this.handleClearSelectedOption}
                 />
             </div>
         );
