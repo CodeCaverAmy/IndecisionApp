@@ -60,28 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-
-
-
-const template = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', {}, 'testing 123');
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(template, document.getElementById('app'));
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -271,7 +254,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -313,7 +296,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -410,7 +393,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -431,10 +414,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -446,10 +429,10 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(16);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -506,10 +489,10 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -523,7 +506,7 @@ module.exports = invariant;
 
 
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -575,10 +558,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -592,8 +575,8 @@ module.exports = warning;
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(6);
-  var warning = __webpack_require__(7);
+  var invariant = __webpack_require__(5);
+  var warning = __webpack_require__(6);
   var ReactPropTypesSecret = __webpack_require__(17);
   var loggedTypeFailures = {};
 }
@@ -642,10 +625,10 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -684,7 +667,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -699,7 +682,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -762,10 +745,10 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -807,7 +790,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -878,7 +861,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -921,7 +904,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,6 +934,29 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(18);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _IndecisionApp = __webpack_require__(32);
+
+var _IndecisionApp2 = _interopRequireDefault(_IndecisionApp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_IndecisionApp2.default, null), document.getElementById('app'));
+
+/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -964,7 +970,7 @@ module.exports = focusNode;
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(2),n=__webpack_require__(3),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -1000,12 +1006,12 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(3);
-var emptyObject = __webpack_require__(4);
-var invariant = __webpack_require__(6);
-var warning = __webpack_require__(7);
-var emptyFunction = __webpack_require__(2);
-var checkPropTypes = __webpack_require__(8);
+var _assign = __webpack_require__(2);
+var emptyObject = __webpack_require__(3);
+var invariant = __webpack_require__(5);
+var warning = __webpack_require__(6);
+var emptyFunction = __webpack_require__(1);
+var checkPropTypes = __webpack_require__(7);
 
 // TODO: this is special because it gets imported during build.
 
@@ -2341,7 +2347,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 17 */
@@ -2406,7 +2412,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(22);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 19 */
@@ -2425,7 +2431,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(5),l=__webpack_require__(9),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(10),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(13),ia=__webpack_require__(14),D=__webpack_require__(4);
+var aa=__webpack_require__(4),l=__webpack_require__(8),B=__webpack_require__(2),C=__webpack_require__(1),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(3);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2722,19 +2728,19 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(5);
-var invariant = __webpack_require__(6);
-var warning = __webpack_require__(7);
-var ExecutionEnvironment = __webpack_require__(9);
-var _assign = __webpack_require__(3);
-var emptyFunction = __webpack_require__(2);
-var EventListener = __webpack_require__(10);
-var getActiveElement = __webpack_require__(11);
-var shallowEqual = __webpack_require__(12);
-var containsNode = __webpack_require__(13);
-var focusNode = __webpack_require__(14);
-var emptyObject = __webpack_require__(4);
-var checkPropTypes = __webpack_require__(8);
+var React = __webpack_require__(4);
+var invariant = __webpack_require__(5);
+var warning = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(8);
+var _assign = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
+var EventListener = __webpack_require__(9);
+var getActiveElement = __webpack_require__(10);
+var shallowEqual = __webpack_require__(11);
+var containsNode = __webpack_require__(12);
+var focusNode = __webpack_require__(13);
+var emptyObject = __webpack_require__(3);
+var checkPropTypes = __webpack_require__(7);
 var hyphenateStyleName = __webpack_require__(23);
 var camelizeStyleName = __webpack_require__(25);
 
@@ -18100,7 +18106,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 23 */
@@ -18257,6 +18263,454 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddOption = function (_React$Component) {
+    _inherits(AddOption, _React$Component);
+
+    function AddOption(props) {
+        _classCallCheck(this, AddOption);
+
+        var _this = _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call(this, props));
+
+        _this.handleAddOption = _this.handleAddOption.bind(_this);
+        // track the state of the error message (which really only resides in this component)
+        _this.state = {
+            error: undefined
+        };
+        return _this;
+    }
+
+    _createClass(AddOption, [{
+        key: 'handleAddOption',
+        value: function handleAddOption(e) {
+            e.preventDefault(); // stop full page refresh
+            var option = e.target.elements.option.value.trim(); // get the value the user typed
+            // if something is returned from handleAddOptions, then it must have been an error
+            var error = this.props.handleAddOption(option);
+
+            this.setState(function () {
+                return { error: error };
+            });
+
+            if (!error) {
+                e.target.elements.option.value = '';
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                this.state.error && _react2.default.createElement(
+                    'p',
+                    null,
+                    this.state.error
+                ),
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: this.handleAddOption },
+                    _react2.default.createElement('input', { type: 'text', name: 'option' }),
+                    _react2.default.createElement(
+                        'button',
+                        null,
+                        'Add Option'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddOption;
+}(_react2.default.Component);
+
+exports.default = AddOption;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// stateless functional component, uses state .. but doesn't manage it
+var Option = function Option(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        props.optionText,
+        _react2.default.createElement(
+            'button',
+            {
+                onClick: function onClick(e) {
+                    props.handleDeleteOption(props.optionText);
+                }
+            },
+            'remove'
+        )
+    );
+};
+
+exports.default = Option;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Header can be a stateless functional component, it only presents info, and doesn't manage state
+var Header = function Header(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h1',
+            null,
+            props.title
+        ),
+        props.subtitle && _react2.default.createElement(
+            'h2',
+            null,
+            props.subtitle
+        )
+    );
+};
+
+Header.defaultProps = {
+    title: 'Indecision'
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// stateless functional component, because while it uses state .. it doesn't need to change the state
+var Action = function Action(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'button',
+            {
+                onClick: props.handlePick,
+                disabled: !props.hasOptions
+            },
+            'What should I do?'
+        )
+    );
+};
+
+exports.default = Action;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Option = __webpack_require__(28);
+
+var _Option2 = _interopRequireDefault(_Option);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// stateless functional component, uses state .. but doesn't manage it .. althoug it does use a function to change state
+var Options = function Options(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'button',
+            { onClick: props.handleDeleteOptions },
+            'Remove All'
+        ),
+        props.options.length > 0 ? _react2.default.createElement(
+            'p',
+            null,
+            'Here are your ',
+            props.options.length,
+            ' options'
+        ) : _react2.default.createElement(
+            'p',
+            null,
+            'Add an option to get started.'
+        ),
+        props.options.map(function (option) {
+            return _react2.default.createElement(_Option2.default, {
+                key: option,
+                optionText: option,
+                handleDeleteOption: props.handleDeleteOption
+            });
+        })
+    );
+};
+
+exports.default = Options;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Header = __webpack_require__(29);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _AddOption = __webpack_require__(27);
+
+var _AddOption2 = _interopRequireDefault(_AddOption);
+
+var _Options = __webpack_require__(31);
+
+var _Options2 = _interopRequireDefault(_Options);
+
+var _Action = __webpack_require__(30);
+
+var _Action2 = _interopRequireDefault(_Action);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var IndecisionApp = function (_React$Component) {
+    _inherits(IndecisionApp, _React$Component);
+
+    // constructor
+    function IndecisionApp(props) {
+        _classCallCheck(this, IndecisionApp);
+
+        var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
+
+        _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
+        _this.handlePick = _this.handlePick.bind(_this);
+        _this.handleAddOption = _this.handleAddOption.bind(_this);
+        _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+        _this.state = {
+            // if users provide options when IndecisionApp component is called
+            options: []
+        };
+        return _this;
+    }
+
+    // Lifecycles: these are only available in a class based componet
+
+
+    _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            try {
+                // read data from local storage
+                var json = localStorage.getItem('options');
+                // since localStorag only stores string
+                // we need to conver the string value back to its JSON object
+                var options = JSON.parse(json);
+
+                if (options) {
+                    //this.setState(() => ({ options: options })) .. 
+                    // is identical to the next line since both the state and the value passing in are named the same
+                    this.setState(function () {
+                        return { options: options };
+                    });
+                }
+            } catch (e) {
+                // Do nothing at all
+            }
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            // save data
+            if (prevState.options.length !== this.state.options.length) {
+                // localStorage will only allow for strings to be saved, 
+                // so use JSON.stringify to convert our object into a string value
+                var json = JSON.stringify(this.state.options);
+                localStorage.setItem('options', json);
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('component will unmount');
+        }
+
+        // methods (may need to be passed on to other components if they don't live in this render method)
+
+    }, {
+        key: 'handleDeleteOptions',
+        value: function handleDeleteOptions() {
+            // this.setState(() => {
+            //     return {
+            //         options: []
+            //     };
+            // });
+
+            // can be simplified to ...
+            this.setState(function () {
+                return { options: [] };
+            });
+        }
+    }, {
+        key: 'handleDeleteOption',
+        value: function handleDeleteOption(optionToRemove) {
+            this.setState(function (prevState) {
+                return {
+                    options: prevState.options.filter(function (option) {
+                        return optionToRemove !== option;
+                    })
+                };
+            });
+        }
+    }, {
+        key: 'handlePick',
+        value: function handlePick() {
+            // randomly pick an option
+            var randomNumber = Math.floor(Math.random() * this.state.options.length);
+            var option = this.state.options[randomNumber];
+            alert(option);
+        }
+    }, {
+        key: 'handleAddOption',
+        value: function handleAddOption(option) {
+            // data needs to be passed up from the AddOption Form
+
+            // validate option
+            // if option is empty
+            if (!option) {
+                return 'Enter valid value to add item';
+            }
+            // else if the option already exits: indexOf(item) ~> index of item OR -1 if it does not exist at all
+            else if (this.state.options.indexOf(option) > -1) {
+                    return 'This option already exits';
+                }
+
+            // this will only be called if the first two if / else if didn't return anything
+            this.setState(function (prevState) {
+                return {
+                    options: prevState.options.concat(option)
+                };
+            });
+        }
+
+        //render
+
+    }, {
+        key: 'render',
+        value: function render() {
+            var subtitle = 'Let the computer decide your destiny';
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_Header2.default, {
+                    subtitle: subtitle
+                }),
+                _react2.default.createElement(_Action2.default, {
+                    hasOptions: this.state.options.length > 0,
+                    handlePick: this.handlePick
+                }),
+                _react2.default.createElement(_Options2.default, {
+                    options: this.state.options,
+                    handleDeleteOptions: this.handleDeleteOptions,
+                    handleDeleteOption: this.handleDeleteOption
+                }),
+                _react2.default.createElement(_AddOption2.default, {
+                    handleAddOption: this.handleAddOption
+                })
+            );
+        }
+    }]);
+
+    return IndecisionApp;
+}(_react2.default.Component);
+
+exports.default = IndecisionApp;
+;
 
 /***/ })
 /******/ ]);

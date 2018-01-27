@@ -13,5 +13,14 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'public'), // absolute path on machine to where it lives
         filename: 'bundle.js'
+    },
+    module: {
+        rules: [{
+            // loader to tell webpack to run babel everytime it sees a JS file we write
+            loader: 'babel-loader',
+            test: /\.js$/,
+            exclude: /node_modules/
+        }]
     }
 };
+
