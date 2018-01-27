@@ -23,6 +23,9 @@ module.exports = {
         }]
     },
     // source map for WebPack to help with debugging
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    }
 };
 

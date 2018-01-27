@@ -15,13 +15,14 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "validator": "^9.3.0",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "devDependencies": {},
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --watch",
-    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=react,env --watch",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
