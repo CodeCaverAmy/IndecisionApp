@@ -1,7 +1,6 @@
-// 1. install validator - yarn add validator
-// 2. import validator - import validator from 'validator'; (from www.npmjs.com/validator)
-// 3. use validator for 'isEmail' - validator.isEmail(name@email.com)
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import validator from 'validator';
+const template = React.createElement('p', {}, 'testing 123');
 
-console.log(validator.isEmail('amyplant@me.com'));
+ReactDOM.render(template, document.getElementById('app'));
