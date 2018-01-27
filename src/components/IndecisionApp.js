@@ -7,17 +7,10 @@ import Action from './Action';
 
 export default class IndecisionApp extends React.Component {
     // constructor
-    constructor(props) {
-        super(props);
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handlePick = this.handlePick.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleDeleteOption = this.handleDeleteOption.bind(this);
-        this.state = {
-            // if users provide options when IndecisionApp component is called
-            options: []
-        };
-    }
+    state = {
+        // if users provide options when IndecisionApp component is called
+        options: []
+    };
 
     // Lifecycles: these are only available in a class based componet
     componentDidMount() {
@@ -38,46 +31,25 @@ export default class IndecisionApp extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        // save data
-        if (prevState.options.length !== this.state.options.length) {
-            // localStorage will only allow for strings to be saved, 
-            // so use JSON.stringify to convert our object into a string value
-            const json = JSON.stringify(this.state.options);
-            localStorage.setItem('options', json);
-        }
-    }
-
-    componentWillUnmount() {
-        console.log('component will unmount');
-    }
-
     // methods (may need to be passed on to other components if they don't live in this render method)
-    handleDeleteOptions() {
-        // this.setState(() => {
-        //     return {
-        //         options: []
-        //     };
-        // });
-
-        // can be simplified to ...
+    handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }));
-    }
+    };
 
-    handleDeleteOption(optionToRemove) {
+    handleDeleteOption = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }));
-    }
+    };
 
-    handlePick() {
+    handlePick = () => {
         // randomly pick an option
         const randomNumber = Math.floor(Math.random()*this.state.options.length);
         const option = this.state.options[randomNumber];
         alert(option);
-    }
+    };
 
-    handleAddOption(option) {
+    handleAddOption = (option) => {
         // data needs to be passed up from the AddOption Form
 
         // validate option
@@ -94,7 +66,22 @@ export default class IndecisionApp extends React.Component {
         this.setState((prevState) => ({
             options: prevState.options.concat(option)
         }));        
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        // save data
+        if (prevState.options.length !== this.state.options.length) {
+            // localStorage will only allow for strings to be saved, 
+            // so use JSON.stringify to convert our object into a string value
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+        }
     }
+
+    componentWillUnmount() {
+        console.log('component will unmount');
+    }
+
 
     //render
     render() {
