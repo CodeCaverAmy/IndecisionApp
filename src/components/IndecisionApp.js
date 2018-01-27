@@ -97,7 +97,6 @@ export default class IndecisionApp extends React.Component {
     render() {
         const subtitle = 'Let the computer decide your destiny';
         return (
-
             <div>
                 <Header 
                     subtitle={subtitle}
