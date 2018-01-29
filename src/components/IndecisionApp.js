@@ -112,10 +112,10 @@ export default class IndecisionApp extends React.Component {
                             handleDeleteOptions = {this.handleDeleteOptions}
                             handleDeleteOption = {this.handleDeleteOption}
                         />
+                        <AddOption 
+                            handleAddOption = {this.handleAddOption}
+                        />
                     </div>
-                    <AddOption 
-                        handleAddOption = {this.handleAddOption}
-                    />
                 </div>
                 <OptionModal 
                     selectedOption = {this.state.selectedOption}

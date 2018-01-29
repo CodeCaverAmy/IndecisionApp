@@ -15,15 +15,16 @@ const Options = (props) => (
         </div>          
         {props.options.length > 0 ? <p className = 'widget__message'>Here are your {props.options.length} options</p> : <p className='widget__message'>Add an option to get started.</p>}
         {
-            props.options.map((option) => (
+            props.options.map((option, index) => (
                 <Option 
-                    key={option} 
+                    key={index} 
                     optionText={option}
+                    count={index + 1}
                     handleDeleteOption={props.handleDeleteOption}
                 />
             ))
         }  
-        </div>
+    </div>
 );
 
 export default Options;

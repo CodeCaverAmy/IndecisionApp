@@ -2,8 +2,8 @@ import React from 'react'
 
 // stateless functional component, uses state .. but doesn't manage it
 const Option = (props) => (
-    <div>
-        {props.optionText}
+    <div className='option'>
+        <p className='option__text'>{props.count}. {props.optionText}</p>
         <button 
             className='button button--link'
             onClick={(e) => {
