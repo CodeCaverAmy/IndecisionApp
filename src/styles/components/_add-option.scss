@@ -8,6 +8,7 @@
 // Add Option
 .add-option {
     display: flex;
+    flex-direction: column;
     padding: $m-size;
 }
 
@@ -19,5 +20,17 @@
     flex-grow: 1;
     outline: none;
     padding: $s-size;
-    margin-right: $s-size;
+    margin: 0 0 $s-size 0;
+    padding: $s-size;
+}
+
+// for screens > 45 rem, override these styles
+@media (min-width: $desktop-breakpoint) {
+    .add-option {
+        flex-direction: row;
+    }
+
+    .add-option__input {
+        margin: 0 $s-size 0 0;
+    }
 }
